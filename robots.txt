@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://lydiafrance.github.io/LydiaFrance//sitemap.xml
+Sitemap: https://lydiafrance.github.io/sitemap.xml
