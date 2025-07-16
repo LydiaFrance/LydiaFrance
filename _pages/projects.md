@@ -2,10 +2,10 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Explore what I am working on.
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+# display_categories: [work]
 horizontal: false
 ---
 
@@ -24,7 +24,7 @@ horizontal: false
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2">
     {% for project in sorted_projects %}
-      {% unless project.name contains 'page' %}
+      {% unless project.name contains 'page' or project.path contains 'ref/' %}
         {% include projects_horizontal.liquid %}
       {% endunless %}
     {% endfor %}
@@ -33,7 +33,7 @@ horizontal: false
   {% else %}
   <div class="row row-cols-1 row-cols-md-3">
     {% for project in sorted_projects %}
-      {% unless project.name contains 'page' %}
+      {% unless project.name contains 'page' or project.path contains 'ref/' %}
         {% include projects.liquid %}
       {% endunless %}
     {% endfor %}
@@ -54,7 +54,7 @@ horizontal: false
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2">
     {% for project in sorted_projects %}
-      {% unless project.name contains 'page' %}
+      {% unless project.name contains 'page' or project.path contains 'ref/' %}
         {% include projects_horizontal.liquid %}
       {% endunless %}
     {% endfor %}
@@ -63,7 +63,7 @@ horizontal: false
   {% else %}
   <div class="row row-cols-1 row-cols-md-3">
     {% for project in sorted_projects %}
-      {% unless project.name contains 'page' %}
+      {% unless project.name contains 'page' or project.path contains 'ref/' %}
         {% include projects.liquid %}
       {% endunless %}
     {% endfor %}

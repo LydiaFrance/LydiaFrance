@@ -104,9 +104,116 @@ The shape changes are combined together and don't exist in isolation. Also it's 
 - **Coordinated Patterns**: Multiple modes work together to achieve complex manoeuvers
 - **Efficient Design**: Only a few fundamental patterns can generate the full range of bird flight behaviors
 
+**Go to the next page to see how we can use the modes to simplify morphing flight.**
 
+<!-- Progress Navigator -->
+<div class="progress-navigator-container mt-5">
+    <div class="progress-navigator-bar">
+        <div class="step" data-page="index">
+            <div class="step-number">1</div>
+            <div class="step-title">The Problem</div>
+        </div>
+        <div class="step" data-page="page2">
+            <div class="step-number">2</div>
+            <div class="step-title">Hidden Patterns</div>
+        </div>
+        <div class="step" data-page="page3">
+            <div class="step-number">3</div>
+            <div class="step-title">Interactive Modes</div>
+        </div>
+        <div class="step active" data-page="page4">
+            <div class="step-number">4</div>
+            <div class="step-title">Obstacle Avoidance</div>
+        </div>
+        <div class="step" data-page="page5">
+            <div class="step-number">5</div>
+            <div class="step-title">Simplified Flight</div>
+        </div>
+    </div>
+</div>
 
 <style>
+.progress-navigator-container {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.progress-navigator-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.progress-navigator-bar::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #e9ecef;
+    z-index: 1;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    z-index: 2;
+    position: relative;
+    background: white;
+    padding: 0 10px;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e9ecef;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.step-title {
+    font-size: 0.8rem;
+    text-align: center;
+    color: #6c757d;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.step.active .step-number {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.step.active .step-title {
+    color: #6f42c1;
+    font-weight: 600;
+}
+
+.step:hover .step-number {
+    background-color: #6f42c1;
+    color: white;
+    transform: scale(1.1);
+}
+
+.step:hover .step-title {
+    color: #6f42c1;
+}
+
 .interactive-heatmap-container {
     transition: all 0.3s ease;
 }
@@ -137,6 +244,23 @@ The shape changes are combined together and don't exist in isolation. Also it's 
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    const steps = document.querySelectorAll('.step');
+    
+    steps.forEach(step => {
+        step.addEventListener('click', function() {
+            const page = this.dataset.page;
+            const baseUrl = '{{ "/projects/morphing-wings/" | relative_url }}';
+            
+            if (page === 'index') {
+                window.location.href = baseUrl;
+            } else if (page === 'page3') {
+                window.location.href = baseUrl + 'page3.html';
+            } else {
+                window.location.href = baseUrl + page + '/';
+            }
+        });
+    });
+
     const hoverZones = document.querySelectorAll('.hover-zone');
     const contextZones = document.querySelectorAll('.context-zone');
     const activeGif = document.getElementById('active-gif');
@@ -232,16 +356,4 @@ document.addEventListener('DOMContentLoaded', function() {
         contextArea.style.display = 'none';
     });
 });
-</script>
-
-**Go to the next page to see how we can use the modes to simplify morphing flight.**
-
-<!-- Navigation -->
-<div class="d-flex justify-content-between mt-5">
-    <a href="{{ '/projects/morphing-wings/page3.html' | relative_url }}" class="btn btn-outline-primary">
-        ← Previous: Interact with Modes
-    </a>
-    <a href="{{ '/projects/morphing-wings/page5/' | relative_url }}" class="btn btn-primary">
-        Simplified Bird Flight →
-    </a>
-</div> 
+</script> 
