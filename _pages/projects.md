@@ -24,14 +24,18 @@ horizontal: false
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2">
     {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
+      {% unless project.name contains 'page' %}
+        {% include projects_horizontal.liquid %}
+      {% endunless %}
     {% endfor %}
     </div>
   </div>
   {% else %}
   <div class="row row-cols-1 row-cols-md-3">
     {% for project in sorted_projects %}
-      {% include projects.liquid %}
+      {% unless project.name contains 'page' %}
+        {% include projects.liquid %}
+      {% endunless %}
     {% endfor %}
   </div>
   {% endif %}
@@ -50,14 +54,18 @@ horizontal: false
   <div class="container">
     <div class="row row-cols-1 row-cols-md-2">
     {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
+      {% unless project.name contains 'page' %}
+        {% include projects_horizontal.liquid %}
+      {% endunless %}
     {% endfor %}
     </div>
   </div>
   {% else %}
   <div class="row row-cols-1 row-cols-md-3">
     {% for project in sorted_projects %}
-      {% include projects.liquid %}
+      {% unless project.name contains 'page' %}
+        {% include projects.liquid %}
+      {% endunless %}
     {% endfor %}
   </div>
   {% endif %}

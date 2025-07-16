@@ -1,115 +1,216 @@
 ---
 ---
 
-@string{aps = {American Physical Society,}}
-
-@book{einstein1920relativity,
-  title={Relativity: the Special and General Theory},
-  author={Einstein, Albert},
-  year={1920},
-  publisher={Methuen & Co Ltd},
-  html={relativity.html}
+@article{ obstacle_avoidance,
+  author = {Brighton, Caroline H. and Kempton, James A. and France, Lydia A. and
+    Kleinheerenbrink, Marco and Minano, Sofia and Taylor, Graham K.},
+  title = {Obstacle Avoidance in Aerial Pursuit},
+  journal = {Current Biology},
+  year = {2023},
+  volume = {33},
+  number = {15},
+  month = {AUG 7},
+  abstract = {Pursuing prey through clutter is a complex and risky activity requiring
+    integration of guidance subsystems for obstacle avoidance and target
+    pursuit. The unobstructed pursuit trajectories of Harris' hawks
+    Parabuteo unicinctus are well modeled by a mixed guidance law feeding
+    back target deviation angle and line-of sight rate. Here we ask how
+    their pursuit behavior is modified in response to obstacles, using
+    high-speed motion capture to reconstruct flight trajectories recorded
+    during obstructed pursuit of maneuvering targets. We find that Harris'
+    hawks use the same mixed guidance law during obstructed pursuit but
+    appear to superpose a discrete bias command that resets their flight
+    direction to aim at a clearance of approximately one wing length from an
+    upcoming obstacle as they reach some threshold distance from it.
+    Combining a feedback command in response to target motion with a
+    feedforward command in response to upcoming obstacles provides an
+    effective means of prioritizing obstacle avoidance while remaining
+    locked-on to a target. We therefore anticipate that a similar mechanism
+    may be used in terrestrial and aquatic pursuit. The same biased guidance
+    law could also be used for obstacle avoidance in drones designed to
+    intercept other drones in clutter, or to navigate between fixed
+    waypoints in urban environments.},
+  DOI = {10.1016/j.cub.2023.06.047},
+  EarlyAccessDate = {AUG 2023},
+  ISSN = {0960-9822},
+  EISSN = {1879-0445},
+  ResearcherID-numbers = {Taylor, Graham/A-5041-2010
+    Klein Heerenbrink, Marco/F-5783-2012
+    France, Lydia/GLV-3822-2022
+    KleinHeerenbrink, Marco/F-5783-2012
+    Kempton, James/JWP-2500-2024
+    Brighton, Caroline/HKO-6725-2023
+    },
+  ORCID-numbers = {Klein Heerenbrink, Marco/0000-0001-8172-8121
+    Taylor, Graham/0000-0001-8289-755X
+    France, Lydia/0000-0003-4392-568X
+    Brighton, Caroline/0000-0002-4428-7205
+    Minano-Gonzalez, Sofia/0000-0001-6363-1545},
+  Unique-ID = {WOS:001058983000001},
+  url = {https://www.cell.com/current-biology/fulltext/S0960-9822(23)00832-1}, 
+  preview = {pursuit_preview.gif}, 
+  altmetric={151107864}, 
+  google_scholar_id={UeHWp8X0CEIC}, 
+  dimensions={true}, 
+  pdf = {https://www.cell.com/current-biology/fulltext/S0960-9822(23)00832-1?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0960982223008321%3Fshowall%3Dtrue#}
 }
 
-@book{einstein1956investigations,
-  bibtex_show={true},
-  title={Investigations on the Theory of the Brownian Movement},
-  author={Einstein, Albert},
-  year={1956},
-  publisher={Courier Corporation},
-  preview={brownian-motion.gif}
+@article{visual_inertial_guidance,
+  author = {Kempton, James A. and Brighton, Caroline H. and France, Lydia A. and
+    KleinHeerenbrink, Marco and Minano, Sofia and Shelton, James and Taylor,
+    Graham K.},
+  title = {Visual versus visual-inertial guidance in hawks pursuing terrestrial
+    targets},
+  journal = {Journal of the Royal Society Interface},
+  year = {2023},
+  volume = {20},
+  number = {203},
+  month = {JUN 14},
+  abstract = {The aerial interception behaviour of falcons is well modelled by a
+    guidance law called proportional navigation, which commands steering at
+    a rate proportional to the angular rate of the line-of-sight from
+    predator to prey. Because the line-of-sight rate is defined in an
+    inertial frame of reference, proportional navigation must be implemented
+    using visual-inertial sensor fusion. By contrast, the aerial pursuit
+    behaviour of hawks chasing terrestrial targets is better modelled by a
+    mixed guidance law combining information on the line-of-sight rate with
+    information on the deviation angle between the attacker's velocity and
+    the line-of-sight. Here we ask whether this behaviour may be controlled
+    using visual information alone. We use high-speed motion capture to
+    record n = 228 flights from N = 4 Harris' hawks Parabuteo unicinctus,
+    and show that proportional navigation and mixed guidance both model
+    their trajectories well. The mixed guidance law also models the data
+    closely when visual-inertial information on the line-of-sight rate is
+    replaced by visual information on the motion of the target relative to
+    its background. Although the visual-inertial form of the mixed guidance
+    law provides the closest fit, all three guidance laws provide an
+    adequate phenomenological model of the behavioural data, whilst making
+    different predictions on the physiological pathways involved.},
+  DOI = {10.1098/rsif.2023.0071},
+  Article-number = {20230071},
+  ISSN = {1742-5689},
+  EISSN = {1742-5662},
+  ResearcherID-numbers = {France, Lydia/GLV-3822-2022
+    Klein Heerenbrink, Marco/F-5783-2012
+    Kempton, James/JWP-2500-2024
+    KleinHeerenbrink, Marco/F-5783-2012
+    Brighton, Caroline/HKO-6725-2023
+    Taylor, Graham/A-5041-2010
+    },
+  ORCID-numbers = {Klein Heerenbrink, Marco/0000-0001-8172-8121
+    Taylor, Graham/0000-0001-8289-755X
+    France, Lydia/0000-0003-4392-568X
+    Kempton, James/0000-0002-4763-8066},
+  Unique-ID = {WOS:001005905000002},
+  preview={visual_LOS_preview.png}, 
+  google_scholar_id={zYLM7Y9cAGgC}, 
+  dimensions={true}, 
+  altmetric={151107864},
+  pdf = {https://royalsocietypublishing.org/doi/pdf/10.1098/rsif.2023.0071}
 }
 
-@article{einstein1950meaning,
-  abbr={AJP},
-  bibtex_show={true},
-  title={The meaning of relativity},
-  author={Einstein, Albert and Taub, AH},
-  journal={American Journal of Physics},
-  volume={18},
-  number={6},
-  pages={403--404},
-  year={1950},
-  publisher={American Association of Physics Teachers}
-}
-
-@article{PhysRev.47.777,
-  abbr={PhysRev},
-  title={Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author={Einstein*†, A. and Podolsky*, B. and Rosen*, N.},
-  abstract={In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal={Phys. Rev.},
-  location={New Jersey},
-  volume={47},
-  issue={10},
-  pages={777--780},
-  numpages={0},
-  year={1935},
-  month={May},
-  publisher=aps,
-  doi={10.1103/PhysRev.47.777},
-  url={http://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html={https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf={example_pdf.pdf},
-  altmetric={248277},
-  dimensions={true},
-  google_scholar_id={qyhmnyLat1gC},
-  video={https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ},
-  additional_info={. *More Information* can be [found here](https://github.com/alshedivat/al-folio/)},
-  annotation={* Example use of superscripts<br>† Albert Einstein},
+@article{perching_optimization,
+  author = {France, Lydia A. and KleinHeerenbrink, Marco and Brighton, Caroline H.
+    and Taylor, Graham K.},
+  title = {Optimization of Avian Perching Manoeuvres},
+  journal = {Nature},
+  year = {2022},
+  volume = {607},
+  number = {7917},
+  pages = {91+},
+  month = {JUL 7},
+  abstract = {Perching at speed is among the most demanding flight behaviours that
+    birds perform(1,2) and is beyond the capability of most autonomous
+    vehicles. Smaller birds may touch down by hovering(3-8), but larger
+    birds typically swoop up to perch(1,2)-presumably because the adverse
+    scaling of their power margin prohibits hovering(9) and because swooping
+    upwards transfers kinetic to potential energy before collision(1,2,10).
+    Perching demands precise control of velocity and pose(11-14),
+    particularly in larger birds for which scale effects make collisions
+    especially hazardous(6,15). However, whereas cruising behaviours such as
+    migration and commuting typically minimize the cost of transport or time
+    of flight(16), the optimization of such unsteady flight manoeuvres
+    remains largely unexplored(7,17). Here we show that the swooping
+    trajectories of perching Harris' hawks (Parabuteo unicinctus) minimize
+    neither time nor energy alone, but rather minimize the distance flown
+    after stalling. By combining motion capture data from 1,576 flights with
+    flight dynamics modelling, we find that the birds' choice of where to
+    transition from powered dive to unpowered climb minimizes the distance
+    over which high lift coefficients are required. Time and energy are
+    therefore invested to provide the control authority needed to glide
+    safely to the perch, rather than being minimized directly as in
+    technical implementations of autonomous perching under nonlinear
+    feedback control(12) and deep reinforcement learning(18,19). Naive birds
+    learn this behaviour on the fly, so our findings suggest a heuristic
+    principle that could guide reinforcement learning of autonomous
+    perching.},
+  DOI = {10.1038/s41586-022-04861-4},
+  EarlyAccessDate = {JUN 2022},
+  ISSN = {0028-0836},
+  EISSN = {1476-4687},
+  ResearcherID-numbers = {Brighton, Caroline/HKO-6725-2023
+    Klein Heerenbrink, Marco/F-5783-2012
+    Taylor, Graham/A-5041-2010
+    France, Lydia/GLV-3822-2022
+    KleinHeerenbrink, Marco/F-5783-2012},
+  ORCID-numbers = {France, Lydia/0000-0003-4392-568X
+    Brighton, Caroline/0000-0002-4428-7205
+    Klein Heerenbrink, Marco/0000-0001-8172-8121
+    Taylor, Graham/0000-0001-8289-755X
+    },
+  Unique-ID = {WOS:000818664800004},
   selected={true},
-  inspirehep_id = {3255}
+  preview={perching_preview.gif}, 
+  altmetric={130417574},
+  dimensions={true},
+  google_scholar_id={9yKSN-GCB0IC},
+  pdf = {https://www.nature.com/articles/s41586-022-04861-4.pdf}
 }
 
-@article{einstein1905molekularkinetischen,
-  title={{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author={Einstein, A.},
-  journal={Annalen der physik},
-  volume={322},
-  number={8},
-  pages={549--560},
-  year={1905},
-  publisher={Wiley Online Library}
-}
+@phdthesis{france2019a,
+  abstract = {Perching is an example of high risk, high reward behaviour executed within tight physical constraints. Despite the
+high risks posed by collision and stall, perching is performed routinely by most birds. However, surprisingly little
+is understood about the energetics and control of aerodynamic braking, nor the detail of wing and tail kinematics
+during perching.
+In this thesis, detailed wing and tail kinematics were quantified for over 1000 indoor perching flights by Harris hawks
+using high-speed motion capture. Similar measurements were also taken from 15 outdoor flights by a Steppe eagle,
+and trajectories were tracked from wild passerines landing on a fixed or oscillating feeder. Aerodynamic braking is
+typically achieved in raptors through a rapid pitch-up manoeuvre executed at the end of a gliding approach. This
+manoeuvre produces high drag as predicted by published unsteady aerodynamic models, but unexpectedly the data
+shows no accompanying peak in lift. The complexity of wing-tail morphing and rotation during the rapid pitch-up
+manoeuvre points to the careful control of aerodynamic forces during unsteady deep stall.
+A high degree of variation in the perching manoeuvre was evident in the Steppe eagle flights, likely in response
+to local air conditions. However the hawk flights were exceedingly consistent under the controlled experimental
+conditions. Different perch distances were used to induce variation in the hawks’ braking strategy. Braking was
+achieved in a flapping rather than gliding approach in the shortest flights, although the observed pattern of body
+pitch-up was consistent across flight distances. Systematic inter-individual variation was recorded in both wing
+motion and trajectory shape.
+As a visually-guided flight behaviour, braking is controlled precisely with respect to the target such that the bird may
+land with low impact force and avoid injuries. Flights from the eagle and hawks show evidence for control of braking
+in line with the predictions of tau theory: during approach to the perch, both the rate of change in the optic flow
+variable tau and the rate of deceleration were constant. This was not the case for wild passerines using intermittent
+flight, although they might still use optic flow in feedback control.},
+  publisher = {University of Oxford},
+  school = {University of Oxford},
+  title = {Mechanics and Control of Perching Flight},
+  author = {France, Lydia A.},
+  year = {2019}, 
+  preview={morphing_preview.gif}, 
+  url = {https://ora.ox.ac.uk/objects/uuid:a439bd30-3916-4fe9-ba06-c65fd1547048},
+  pdf = {https://ora.ox.ac.uk/objects/uuid:a439bd30-3916-4fe9-ba06-c65fd1547048/files/rdn39x183g},
+  abbr={PhD Thesis}
+  }
 
-@article{einstein1905movement,
-  abbr={Ann. Phys.},
-  title={Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author={Einstein, A.},
-  journal={Ann. Phys.},
-  volume={17},
-  pages={549--560},
-  year={1905}
-}
-
-@article{einstein1905electrodynamics,
-  title={On the electrodynamics of moving bodies},
-  author={Einstein, A.},
-  year={1905}
-}
-
-@Article{einstein1905photoelectriceffect,
-  bibtex_show={true},
-  abbr={Ann. Phys.},
-  title="{{\"U}ber einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt}",
-  author={Albert Einstein},
-  abstract={This is the abstract text.},
-  journal={Ann. Phys.},
-  volume={322},
-  number={6},
-  pages={132--148},
-  year={1905},
-  doi={10.1002/andp.19053220607},
-  award={Albert Einstein receveid the **Nobel Prize in Physics** 1921 *for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect*},
-  award_name={Nobel Prize}
-}
-
-@book{przibram1967letters,
-  bibtex_show={true},
-  title={Letters on wave mechanics},
-  author={Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
-  year={1967},
-  publisher={Vision},
-  preview={wave-mechanics.gif},
-  abbr={Vision}
+@article{France2025,
+  author       = {France, Lydia A. and Shelton, James and Heerenbrink, Marco Klein and Brighton, Caroline and Taylor, Graham K.},
+  year         = {2025},
+  journal      = {bioRxiv},
+  title        = {Signatures of Motion: Decomposition of Adaptive Morphing Flight in Harris' Hawks},
+  doi          = {10.1101/2025.06.03.657611},
+  pdf       = {https://www.biorxiv.org/content/early/2025/06/07/2025.06.03.657611.full.pdf},
+  url          = {https://www.biorxiv.org/content/early/2025/06/07/2025.06.03.657611},
+  abstract     = {Birds outperform engineered aircraft with exceptional maneuverability, achieved by continuously morphing their wings and tails in flight. Yet the coordination and control of these shape changes remain poorly understood. Using high-speed motion capture of Harris' hawks, we analyzed 289,000 wing-tail configurations in over 2000 flights and identified four fundamental shape change patterns, or "morphing shape modes", that capture over 96\% of wing and tail variation. Further modes reflect subtle but critical fine-tuning, in line with known morphing control mechanics. The hawks' morphing flight is highly structured yet flexible, and we find adaptive strategies in response to obstacles, added weight, with maturity, while each individual shows unique morphing signatures. Our approach defines a shared kinematic morphospace for hawk flight, and more broadly a framework that enables future comparative biomechanics, bio-inspired design, and for interpreting high-dimensional natural motion.},
+  publisher    = {bioRxiv},
+  abbr={preprint}, 
+  preview={takeoff_preview.gif},
 }
