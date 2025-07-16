@@ -30,9 +30,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/LydiaFrance/projects/";
           },
-        },{id: "nav-repositories",
-          title: "repositories",
-          description: "Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.",
+        },{id: "nav-github",
+          title: "github",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/LydiaFrance/repositories/";
@@ -51,28 +51,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/LydiaFrance/teaching/";
           },
-        },{id: "nav-people",
-          title: "people",
-          description: "members of the lab or group",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/LydiaFrance/people/";
-          },
-        },{id: "dropdown-bookshelf",
-              title: "bookshelf",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/LydiaFrance/books/";
-              },
-            },{id: "dropdown-blog",
-              title: "blog",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/LydiaFrance/blog/";
-              },
-            },{id: "post-a-post-with-plotly-js",
+        },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
         
@@ -429,12 +408,7 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/LydiaFrance/projects/1_project/";
-            },},{id: "projects-project-2",
+          section: "News",},{id: "projects-project-2",
           title: 'project 2',
           description: "a project with a background image and giscus comments",
           section: "Projects",handler: () => {
@@ -474,19 +448,46 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/LydiaFrance/projects/9_project/";
+            },},{id: "projects-shape-changing-wings-in-flight",
+          title: 'Shape Changing Wings in Flight',
+          description: "Birds achieve extraordinary flight performance through continuous wing shape changes.",
+          section: "Projects",handler: () => {
+              window.location.href = "/LydiaFrance/projects/morphing-wings/";
+            },},{id: "projects-morphing-flight-hidden-patterns",
+          title: 'Morphing Flight - Hidden Patterns',
+          description: "Discovering the fundamental patterns behind complex wing morphing",
+          section: "Projects",handler: () => {
+              window.location.href = "/LydiaFrance/projects/morphing-wings/page2/";
+            },},{id: "projects-explore-obstacle-avoidance",
+          title: 'Explore Obstacle Avoidance',
+          description: "Interact with the data to see how different wing morphing patterns are used in flights with an obstacle.",
+          section: "Projects",handler: () => {
+              window.location.href = "/LydiaFrance/projects/morphing-wings/page4/";
+            },},{id: "projects-make-morphing-flight-simpler",
+          title: 'Make Morphing Flight Simpler',
+          description: "See how reducing dimensions affects our understanding of bird flight patterns",
+          section: "Projects",handler: () => {
+              window.location.href = "/LydiaFrance/projects/morphing-wings/page5/";
             },},{
-        id: 'social-email',
-        title: 'email',
+        id: 'social-github',
+        title: 'GitHub',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D", "_blank");
+          window.open("https://github.com/LydiaFrance", "_blank");
         },
       },{
-        id: 'social-inspire',
-        title: 'Inspire HEP',
+        id: 'social-linkedin',
+        title: 'LinkedIn',
         section: 'Socials',
         handler: () => {
-          window.open("https://inspirehep.net/authors/1010907", "_blank");
+          window.open("https://www.linkedin.com/in/lydia-france-139864a3", "_blank");
+        },
+      },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/0000-0003-4392-568X", "_blank");
         },
       },{
         id: 'social-rss',
@@ -500,14 +501,7 @@ ninja.data = [{
         title: 'Google Scholar',
         section: 'Socials',
         handler: () => {
-          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
-        },
-      },{
-        id: 'social-custom_social',
-        title: 'Custom_social',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://www.alberteinstein.com/", "_blank");
+          window.open("https://scholar.google.com/citations?user=V_ym23AAAAAJ", "_blank");
         },
       },{
       id: 'light-theme',
