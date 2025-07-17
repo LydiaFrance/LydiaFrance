@@ -7,12 +7,11 @@ category: work
 permalink: /projects/morphing-wings/page4/
 ---
 
-The following heatmap shows how Toothless flew between two perches with and without an obstacle. Each row shows a different morphing shape mode, with the colours showing <span style="color: #dc3545; font-weight: bold;">positive</span> and <span style="color: #3682BA; font-weight: bold;">negative</span> scores. Scores are the binned averages from 30 flights with an obstacle and 67 without.   
+The following heatmap shows how Toothless flew between two perches with and without an obstacle. Each row shows a different morphing shape mode, with the colours showing <span style="color: #dc3545; font-weight: bold;">positive</span> and <span style="color: #3682BA; font-weight: bold;">negative</span> scores. Scores are the binned averages from 30 flights with an obstacle and 67 without.
 
 Try hovering your mouse over the heatmap, move from left to right as the hawk approaches the obstacle and lands. The gif will show you the morphing shape changes shown by each row. You can directly compare flights with an obstacle (top of each row) to flights without an obstacle (underneath).
- 
 
-*Note, the animations are symmetrical, but not all shape changes in flight are the same on the left and right sides of the hawk.*
+_Note, the animations are symmetrical, but not all shape changes in flight are the same on the left and right sides of the hawk._
 
 ---
 
@@ -95,10 +94,9 @@ Try hovering your mouse over the heatmap, move from left to right as the hawk ap
 
 ## Insights
 
-By splitting the complexity of morphing flight into morphing shape modes it is far easier to see extremely subtle changes how the hawk flies. Usually in biomechanics we miss this detail. While nine morphing modes is a lot, this has lowered the *number of dimensions* for morphing flight considerably. 
+By splitting the complexity of morphing flight into morphing shape modes it is far easier to see extremely subtle changes how the hawk flies. Usually in biomechanics we miss this detail. While nine morphing modes is a lot, this has lowered the _number of dimensions_ for morphing flight considerably.
 
-The shape changes are combined together and don't exist in isolation. Also it's important to remember every hawk flies differently! 
-
+The shape changes are combined together and don't exist in isolation. Also it's important to remember every hawk flies differently!
 
 - **Context-Dependent Control**: Different shape changes when accelerating, turning, gliding, and landing
 - **Coordinated Patterns**: Multiple modes work together to achieve complex manoeuvers
@@ -111,7 +109,7 @@ The shape changes are combined together and don't exist in isolation. Also it's 
     <div class="progress-navigator-bar">
         <div class="step" data-page="index">
             <div class="step-number">1</div>
-            <div class="step-title">The Problem</div>
+            <div class="step-title">Morphing Flight</div>
         </div>
         <div class="step" data-page="page2">
             <div class="step-number">2</div>
@@ -119,7 +117,7 @@ The shape changes are combined together and don't exist in isolation. Also it's 
         </div>
         <div class="step" data-page="page3">
             <div class="step-number">3</div>
-            <div class="step-title">Interactive Modes</div>
+            <div class="step-title">Shape Change Modes</div>
         </div>
         <div class="step active" data-page="page4">
             <div class="step-number">4</div>
@@ -356,4 +354,4 @@ document.addEventListener('DOMContentLoaded', function() {
         contextArea.style.display = 'none';
     });
 });
-</script> 
+</script>

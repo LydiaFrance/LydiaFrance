@@ -26,7 +26,7 @@ document.addEventListener("readystatechange", () => {
       /* add pseudocode node and remove the original code block */
       parent.appendChild(pseudoCodeElement);
       parent.removeChild(elem.parentElement);
-      /* embed the visualization in the container */
+      /* embed the visualisation in the container */
       pseudocode.renderElement(pseudoCodeElement);
     });
   }

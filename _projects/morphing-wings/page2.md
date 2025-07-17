@@ -7,11 +7,11 @@ category: work
 permalink: /projects/morphing-wings/page2/
 ---
 
-We measured millions of feather positions around five Harris hawks in flight. In our flight hall, the hawks were recorded during taking off, flapping, gliding, turning, obstacle avoiding, and landing. Two thousand flights were recorded, at around 200 frames per second. 
+We measured millions of feather positions around five Harris hawks in flight. In our flight hall, the hawks were recorded during taking off, flapping, gliding, turning, obstacle avoiding, and landing. Two thousand flights were recorded, at around 200 frames per second.
 
 ## Diversity of Motion
 
-Each dot in the point cloud below is a real marker position from a feather on the hawk (Toothless). We overlaid hundreds of flights to see how the wings and tails move in flight. Every marker position is shown here centred around the middle of the hawk, with any whole body rotations removed. The dark areas show where the feather markers most frequently appear. The arcs show the curving path of the wings during flapping. 
+Each dot in the point cloud below is a real marker position from a feather on the hawk (Toothless). We overlaid hundreds of flights to see how the wings and tails move in flight. Every marker position is shown here centred around the middle of the hawk, with any whole body rotations removed. The dark areas show where the feather markers most frequently appear. The arcs show the curving path of the wings during flapping.
 
 <div class="row justify-content-center mt-3 mb-4">
     <div class="col-md-6">
@@ -20,7 +20,7 @@ Each dot in the point cloud below is a real marker position from a feather on th
             Your browser does not support the video tag.
         </video>
         <div class="caption">
-            Point cloud visualization of feather marker positions from hundreds of flights.
+            Point cloud visualisation of feather marker positions from hundreds of flights.
         </div>
     </div>
     <div class="col-md-6 d-flex flex-column justify-content-center">
@@ -34,19 +34,15 @@ Each dot in the point cloud below is a real marker position from a feather on th
     </div>
 </div>
 
-
 ## Extracting Patterns
 
-With this huge dataset of natural flight behaviours, we asked the data **"What are the most important shape changes during flight?** We made no predefined assumptions, instead finding the dominant patterns in the spatial relationships between the markers. 
+With this huge dataset of natural flight behaviours, we asked the data **"What are the most important shape changes during flight?** We made no predefined assumptions, instead finding the dominant patterns in the spatial relationships between the markers.
 
-
-Most biomechanics and bird flight analysis track joint angles. Instead we treat the bird as a shape and analyse it as a whole. This is a different way of thinking about natural motion, and can be used with other animals. 
-
+Most biomechanics and bird flight analysis track joint angles. Instead we treat the bird as a shape and analyse it as a whole. This is a different way of thinking about natural motion, and can be used with other animals.
 
 ## Breaking Down Complexity
 
-The hawks' morphing flight can be thought as a series of modes, or building blocks, that combine together. Separately, these shape change patterns help us see what is underneath bigger movements of the wings that would otherwise be hard to see. The most important shape changes are those critical in flapping, wing <span style="color: #7BBE23; font-weight: bold;">lifting and lowering</span> and <span style="color: #2FB177; font-weight: bold;">spreading and folding</span>. 
-
+The hawks' morphing flight can be thought as a series of modes, or building blocks, that combine together. Separately, these shape change patterns help us see what is underneath bigger movements of the wings that would otherwise be hard to see. The most important shape changes are those critical in flapping, wing <span style="color: #7BBE23; font-weight: bold;">lifting and lowering</span> and <span style="color: #2FB177; font-weight: bold;">spreading and folding</span>.
 
 <div class="row justify-content-center mt-4 mb-4">
     <div class="col-md-5 col-sm-6">
@@ -69,14 +65,14 @@ The hawks' morphing flight can be thought as a series of modes, or building bloc
     </div>
 </div>
 
-Each shape change mode is mathematically simple for comparison across behaviours, individuals, and even species. 
+Each shape change mode is not a realistic way the bird moves. It is just a building block, they are combined together to make realistic motion. Each is mathematically simple for comparison across behaviours, individuals, and even species.
 
-These are the first two, we have found **nine morphing shape modes** which together account for over 99.9% of morphing flight in the hawks. 
+These are the first two, we have found **nine morphing shape modes** which combined together account for over 99.9% of morphing flight in the hawks.
 
 ## Why This Matters
 
-- **Birds aren't randomly flapping** - they're following predictable patterns
-- **Complex flight can be understood** through simple mathematical principles  
+- **Morphing is made from predictable patterns** - the same shape changes come up again and again
+- **Complex flight can be understood** through simple mathematical principles
 - **We can potentially replicate** these patterns in artificial flight systems
 - **Nature has already solved** the optimisation problem we're struggling with in aviation
 
@@ -87,7 +83,7 @@ These are the first two, we have found **nine morphing shape modes** which toget
     <div class="progress-navigator-bar">
         <div class="step" data-page="index">
             <div class="step-number">1</div>
-            <div class="step-title">The Problem</div>
+            <div class="step-title">Morphing Flight</div>
         </div>
         <div class="step active" data-page="page2">
             <div class="step-number">2</div>
@@ -95,7 +91,7 @@ These are the first two, we have found **nine morphing shape modes** which toget
         </div>
         <div class="step" data-page="page3">
             <div class="step-number">3</div>
-            <div class="step-title">Interactive Modes</div>
+            <div class="step-title">Shape Change Modes</div>
         </div>
         <div class="step" data-page="page4">
             <div class="step-number">4</div>
@@ -210,4 +206,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-</script> 
+</script>

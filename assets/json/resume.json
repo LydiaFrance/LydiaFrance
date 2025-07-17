@@ -60,10 +60,7 @@
       "startDate": "2019-08",
       "endDate": "2021-07",
       "summary": "Studied flight control, obstacle avoidance, and vision-guided behaviour in birds. Recorded over 4 million data points using a custom motion capture system.",
-      "highlights": [
-        "ERC-funded research into visually guided flight",
-        "Fieldwork and experimental design with Harris hawks and zebra finches"
-      ]
+      "highlights": ["ERC-funded research into visually guided flight", "Fieldwork and experimental design with Harris hawks and zebra finches"]
     }
   ],
   "education": [
@@ -92,19 +89,7 @@
   "skills": [
     {
       "name": "Programming",
-      "keywords": [
-        "Python",
-        "Rust",
-        "MATLAB",
-        "R",
-        "Jupyter",
-        "PyTorch",
-        "TensorFlow",
-        "Git",
-        "Docker",
-        "DVC",
-        "Azure"
-      ]
+      "keywords": ["Python", "Rust", "MATLAB", "R", "Jupyter", "PyTorch", "TensorFlow", "Git", "Docker", "DVC", "Azure"]
     },
     {
       "name": "Scientific Methods",
@@ -140,96 +125,56 @@
     {
       "name": "Morphing Shape Space of Hawk Flight",
       "description": "Principal component analysis of 3D wing and tail kinematics in Harris' hawk, enabling generalisable shape modes across morphologies.",
-      "keywords": [
-        "PCA",
-        "morphing flight",
-        "hawk",
-        "biomechanics"
-      ],
+      "keywords": ["PCA", "morphing flight", "hawk", "biomechanics"],
       "startDate": "2021-02"
     },
     {
       "name": "Comparative Study of Morphing Flight",
       "description": "Cross-species comparison of morphing strategies in birds using projected shape modes, with data from kestrels, pigeons, and hawks.",
-      "keywords": [
-        "comparative morphology",
-        "shape analysis",
-        "birds",
-        "PCA"
-      ],
+      "keywords": ["comparative morphology", "shape analysis", "birds", "PCA"],
       "startDate": "2025-04"
     },
     {
       "name": "Morphing Flight in Gust Manoeuvres",
       "description": "Analysis of pigeon and kestrel responses to wind gusts using shape-based methods to quantify adaptive morphing during unsteady flight.",
-      "keywords": [
-        "gust response",
-        "adaptive control",
-        "kestrels",
-        "pigeons"
-      ],
+      "keywords": ["gust response", "adaptive control", "kestrels", "pigeons"],
       "startDate": "2025-06"
     },
     {
       "name": "Dynamic Decomposition of Wings During Flapping",
       "description": "Application of Dynamic Mode Decomposition (DMD) to isolate temporal patterns in wing and tail movement during flight.",
-      "keywords": [
-        "DMD",
-        "wing dynamics",
-        "flapping flight"
-      ],
+      "keywords": ["DMD", "wing dynamics", "flapping flight"],
       "startDate": "2024-05"
     },
     {
       "name": "Shape Analysis of Flight Trajectories",
       "description": "Elastic shape analysis of 3D flight paths grouped by individual and context (e.g., perch distance) using SRVF and Karcher means.",
-      "keywords": [
-        "trajectory shape",
-        "elastic analysis",
-        "Karcher mean"
-      ],
+      "keywords": ["trajectory shape", "elastic analysis", "Karcher mean"],
       "startDate": "2022-02"
     },
     {
       "name": "Data Signatures in Animal Motion",
       "description": "Exploring the use of rough paths and time-series signatures to characterise differences in flapping and locomotion control.",
-      "keywords": [
-        "rough paths",
-        "time series",
-        "signature methods"
-      ],
+      "keywords": ["rough paths", "time series", "signature methods"],
       "startDate": "2025-07"
     },
     {
       "name": "High-Dimensional Spider Biomechanics Decomposition",
       "description": "Morphing and dynamics analyses of leg and body markers in spiders during walking.",
-      "keywords": [
-        "spider motion",
-        "PCA",
-        "locomotion analysis"
-      ],
+      "keywords": ["spider motion", "PCA", "locomotion analysis"],
       "startDate": "2024-07"
     },
     {
       "name": "Geometric Machine Learning of Wing Shapes in Flight",
       "description": "Developing ML techniques for representing and comparing wing shapes from motion capture data.",
-      "keywords": [
-        "geometric ML",
-        "motion capture",
-        "representation learning"
-      ],
+      "keywords": ["geometric ML", "motion capture", "representation learning"],
       "startDate": "2025-07"
     },
     {
       "name": "FastNet: AI for Weather Forecasting",
       "description": "GNN-based predictive models using HPC and cloud infrastructure, in collaboration with the Met Office.",
       "startDate": "2024-02",
-      "keywords": [
-        "GNN",
-        "Spatiotemporal forecasting",
-        "Azure",
-        "HPC"
-      ]
+      "keywords": ["GNN", "Spatiotemporal forecasting", "Azure", "HPC"]
     },
     {
       "name": "Open Research Software Teaching",
@@ -242,57 +187,32 @@
       "name": "Optimization of avian perching manoeuvres",
       "publisher": "Nature",
       "releaseDate": "2022-06",
-      "authors": [
-        "Lydia Allegranza France",
-        "Marco Klein Heerenbrink",
-        "Caroline Brighton",
-        "Graham K Taylor"
-      ],
+      "authors": ["Lydia Allegranza France", "Marco Klein Heerenbrink", "Caroline Brighton", "Graham K Taylor"],
       "url": "https://www.nature.com/articles/s41586-022-04861-4"
     },
     {
       "name": "Obstacle avoidance in aerial pursuit",
       "publisher": "Current Biology",
       "releaseDate": "2023-08",
-      "authors": [
-        "Caroline Brighton",
-        "James Kempton",
-        "Lydia Allegranza France",
-        "..."
-      ],
+      "authors": ["Caroline Brighton", "James Kempton", "Lydia Allegranza France", "..."],
       "url": "https://www.sciencedirect.com/science/article/pii/S0960982223008321"
     },
     {
       "name": "Visual vs visual-inertial guidance in hawks",
       "publisher": "Journal of the Royal Society Interface",
       "releaseDate": "2023-06",
-      "authors": [
-        "James Kempton",
-        "Caroline Brighton",
-        "Lydia Allegranza France",
-        "..."
-      ],
+      "authors": ["James Kempton", "Caroline Brighton", "Lydia Allegranza France", "..."],
       "url": "https://royalsocietypublishing.org/doi/10.1098/rsif.2023.0071"
     }
   ],
   "interests": [
     {
       "name": "Improv Comedy",
-      "keywords": [
-        "Oxford Imps",
-        "Edinburgh Fringe",
-        "Science communication through performance"
-      ]
+      "keywords": ["Oxford Imps", "Edinburgh Fringe", "Science communication through performance"]
     },
     {
       "name": "Science Communication",
-      "keywords": [
-        "Podcasts",
-        "BBC",
-        "Live shows",
-        "YouTube",
-        "Workshops"
-      ]
+      "keywords": ["Podcasts", "BBC", "Live shows", "YouTube", "Workshops"]
     }
   ]
 }

@@ -7,13 +7,13 @@ category: work
 permalink: /projects/morphing-wings/page5/
 ---
 
-Bird flight involves many *degrees of freedom* - which means multiple joints with multiple muscles and many possible configurations.
+Bird flight involves many _degrees of freedom_ - which means multiple joints with multiple muscles and many possible configurations.
 
-We can rebuild full morphing flight with different numbers of morphing shape modes. This is known as **dimension reduction**. 
+We can rebuild full morphing flight with different numbers of morphing shape modes. This is known as **dimension reduction**.
 
 ## Dimension Reduction
 
-Here is a real flight by Toothless as recorded by motion capture. We can use the morphing shape modes to simplify the flight. You can see which morphing shape modes are used for each example. 
+Here is a real flight by Toothless as recorded by motion capture. We can use the morphing shape modes to simplify the flight. You can see which morphing shape modes are used for each example.
 
 Toggle the animation with or without the original data underneath (in grey). Hover over the morphing shape modes to see their effect.
 
@@ -26,7 +26,7 @@ Toggle the animation with or without the original data underneath (in grey). Hov
             <div class="d-flex justify-content-center align-items-center">
                 <!-- Comparison toggle button on the left -->
                 <div class="me-4">
-                    <button type="button" class="btn btn-comparison" id="compare-toggle">VS ORIGINAL</button>
+                    <button type="button" class="btn btn-comparison active" id="compare-toggle">VS ORIGINAL</button>
                 </div>
                 
                 <!-- Dimension selector buttons on the right -->
@@ -46,7 +46,7 @@ Toggle the animation with or without the original data underneath (in grey). Hov
             <div class="col-md-7">
                 <div class="gif-container text-center" style="min-height: 400px;">
                     <img id="dimensional-gif" 
-                         src="{{ '/assets/img/bird_gifs/right_turn_2dims.gif' | relative_url }}" 
+                         src="{{ '/assets/img/bird_gifs/right_turn_2dims_compare.gif' | relative_url }}" 
                          class="img-fluid rounded z-depth-1" 
                          style="max-height: 500px;"
                          alt="Bird flight dimensional reduction">
@@ -61,6 +61,10 @@ Toggle the animation with or without the original data underneath (in grey). Hov
                     </div>
                     <div id="pc-modes-grid">
                         <!-- PC gifs will be dynamically added here -->
+                    </div>
+                    <!-- Hover description text -->
+                    <div id="pc-description" class="text-center mt-2" style="opacity: 0; transition: opacity 0.3s ease; height: 20px;">
+                        <span style="font-size: 0.8rem; color: #6c757d; font-weight: 600;"></span>
                     </div>
                 </div>
                 
@@ -90,7 +94,7 @@ Toggle the animation with or without the original data underneath (in grey). Hov
 
 ## Subtle Shape Changes
 
-With fewer modes, the representation drifts away from the original. Even with 4 modes, 96% of the original, the tail is not well represented. 
+With fewer modes, the representation drifts away from the original. Even with 4 modes, 96% of the original, the tail is not well represented.
 
 Morphing flight has very subtle elements and the hawks need more modes for manoeuvres.
 
@@ -99,7 +103,7 @@ Morphing flight has very subtle elements and the hawks need more modes for manoe
     <div class="progress-navigator-bar">
         <div class="step" data-page="index">
             <div class="step-number">1</div>
-            <div class="step-title">The Problem</div>
+            <div class="step-title">Morphing Flight</div>
         </div>
         <div class="step" data-page="page2">
             <div class="step-number">2</div>
@@ -107,7 +111,7 @@ Morphing flight has very subtle elements and the hawks need more modes for manoe
         </div>
         <div class="step" data-page="page3">
             <div class="step-number">3</div>
-            <div class="step-title">Interactive Modes</div>
+            <div class="step-title">Shape Change Modes</div>
         </div>
         <div class="step" data-page="page4">
             <div class="step-number">4</div>
@@ -362,9 +366,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
+    // PC mode descriptions
+    const pcDescriptions = {
+        'PC01_cropped': '(1) Wing lifting',
+        'PC02_cropped': '(2) Wing folding',
+        'PC03_cropped': '(3) Tail spreading',
+        'PC04_cropped': '(4) Body pitch',
+        'PC05_cropped': '(5) Wing sweeping',
+        'PC06_cropped': '(6) Tail twisting',
+        'PC07_cropped': '(7) Wing extension',
+        'PC08_cropped': '(8) Body roll',
+        'PC09_cropped': '(9) Fine tail control'
+    };
+    
     // Track current state
     let currentDims = '2';
-    let showComparison = false;
+    let showComparison = true;
     
     function updateMainGif() {
         const data = dimensionData[currentDims];
@@ -438,13 +455,22 @@ document.addEventListener('DOMContentLoaded', function() {
             pcImg.dataset.staticSrc = staticSrc;
             pcImg.dataset.animatedSrc = animatedSrc;
             
-            // Add hover functionality to swap between static and animated
+            const descriptionElement = document.getElementById('pc-description');
+            const descriptionSpan = descriptionElement.querySelector('span');
+            
+            // Add hover functionality to swap between static and animated, and show description
             pcImg.addEventListener('mouseenter', function() {
                 this.src = this.dataset.animatedSrc;
+                // Show description
+                const description = pcDescriptions[pc] || '';
+                descriptionSpan.textContent = description;
+                descriptionElement.style.opacity = '1';
             });
             
             pcImg.addEventListener('mouseleave', function() {
                 this.src = this.dataset.staticSrc;
+                // Hide description
+                descriptionElement.style.opacity = '0';
             });
             
             console.log('Creating PC image with static src:', pcImg.src); // Debug log
@@ -489,8 +515,9 @@ document.addEventListener('DOMContentLoaded', function() {
         updateMainGif();
     });
     
-    // Initialize with 2 modes view
+    // Initialize with 2 modes view and comparison on
     updatePCModes(dimensionData['2'].pcs);
     updateAccuracyDisplay();
+    updateMainGif(); // Ensure the gif matches the initial comparison state
 });
-</script> 
+</script>

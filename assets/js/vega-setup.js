@@ -13,7 +13,7 @@ document.addEventListener("readystatechange", () => {
       chartElement.classList.add("vega-lite");
       backup.after(chartElement);
 
-      /* Embed the visualization in the container */
+      /* Embed the visualisation in the container */
       if (vegaTheme === "dark") {
         vegaEmbed(chartElement, JSON.parse(jsonData), { theme: "dark" });
       } else {

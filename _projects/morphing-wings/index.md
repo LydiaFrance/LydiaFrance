@@ -27,13 +27,11 @@ In this slowed down video, the hawk uses many adjustments to her wings and tail 
 
 ## Adaptive, Reactive
 
-Morphing flight gives birds extraordinary control. By adjusting their **shape** as they fly, birds precisely change their stability, lift, and drag continously. Birds have evolved to to fly through dense forest branches, execute sharp turns that no fighter jet can manage, and land on a perch no wider than your thumb. Meanwhile, our aircraft need long runways, can't handle sudden wind gusts, and can't stop in middair. 
+Morphing flight gives birds extraordinary control. By adjusting their **shape** as they fly, birds precisely change their stability, lift, and drag continously. Birds have evolved to to fly through dense forest branches, execute sharp turns that no fighter jet can manage, and land on a perch no wider than your thumb. Meanwhile, our aircraft need long runways, can't handle sudden wind gusts, and can't stop in midair.
 
 ## Mystery of Shape-Shifting Flight
 
-We still don't understand how morphing flight is controlled. We would like to learn from birds: how they control such super-manoeuvribility. Which **shape changes** are critical in flight? How do birds control so many coordinated movements all at once? It is no easy task, even recording wings in flight accurately is difficult as bird flight is high speed. 
-
-
+We still don't understand how morphing flight is controlled. We would like to learn from birds: how they control such super-manoeuvribility. Which **shape changes** are critical in flight? How do birds control so many coordinated movements all at once? It is no easy task, even recording wings in flight accurately is difficult as bird flight is high speed.
 
 <div class="row mt-4">
     <div class="col-md-6">
@@ -55,7 +53,6 @@ We still don't understand how morphing flight is controlled. We would like to le
         </ul>
     </div>
 </div>
-
 
 ## High Speed Motion Capture
 
@@ -80,7 +77,7 @@ To uncover how morphing flight works, we filmed 5 Harris' hawks in a specially b
     <div class="progress-navigator-bar">
         <div class="step active" data-page="index">
             <div class="step-number">1</div>
-            <div class="step-title">The Problem</div>
+            <div class="step-title">Morphing Flight</div>
         </div>
         <div class="step" data-page="page2">
             <div class="step-number">2</div>
@@ -88,7 +85,7 @@ To uncover how morphing flight works, we filmed 5 Harris' hawks in a specially b
         </div>
         <div class="step" data-page="page3">
             <div class="step-number">3</div>
-            <div class="step-title">Interactive Modes</div>
+            <div class="step-title">Shape Change Modes</div>
         </div>
         <div class="step" data-page="page4">
             <div class="step-number">4</div>
@@ -203,4 +200,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-</script> 
+</script>
