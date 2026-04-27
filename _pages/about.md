@@ -17,14 +17,10 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  enabled: false
 
 latest_posts:
   enabled: false
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
 ---
 
 I am a [Schmidt AI in Science](https://www.schmidtsciences.org/) Research Fellow at the University of Oxford in the Department of Biology. My research involves how animals shape their bodies during high dimensional dynamic movement, from hawks morphing their wings in flight to complex multi-legged invertebrate gaits. I am part of the [Oxford Flight Group](https://flight.zoo.ox.ac.uk/index.html).
