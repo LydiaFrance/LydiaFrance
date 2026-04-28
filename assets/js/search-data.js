@@ -44,23 +44,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/LydiaFrance/teaching/";
           },
-        },{id: "books-the-godfather",
-          title: 'The Godfather',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/LydiaFrance/books/the_godfather.html";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
-          description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/LydiaFrance/news/announcement_2.html";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
-          description: "",
-          section: "News",},{id: "projects-shape-changing-wings-in-flight",
+        },{id: "projects-birddmd",
+          title: 'BirdDMD',
+          description: "Dynamic Mode Decomposition tools for modelling bird flight.",
+          section: "Projects",handler: () => {
+              window.location.href = "/LydiaFrance/projects/birddmd/";
+            },},{id: "projects-shape-changing-wings-in-flight",
           title: 'Shape Changing Wings in Flight',
           description: "Birds achieve extraordinary flight performance through continuous wing shape changes.",
           section: "Projects",handler: () => {
