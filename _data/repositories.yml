@@ -2,6 +2,8 @@ repo_description_lines_max: 2
 
 github_repos:
   - LydiaFrance/morphing_birds
+  - LydiaFrance/kinematic-morphospace
+  - LydiaFrance/BirdDMD
   - LydiaFrance/spiderpca
   - alan-turing-institute/trustchain
   - ClimeTrend/DynaModERA

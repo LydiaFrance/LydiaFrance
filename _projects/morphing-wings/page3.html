@@ -291,7 +291,7 @@
         directions.
         <br>
         <br>
-        <h5 class="text-center">Switch modes using the left buttons. When paused, you can rotate the bird.</h5>
+        <h5 class="text-center">Switch modes using the left buttons. Use the play/pause button below, or double-click the figure. Drag to rotate.</h5>
         <br>
       </div>
 
@@ -964,7 +964,7 @@
                 {
                   displayModeBar: false,
                   staticPlot: false,
-                  scrollZoom: false,
+                  scrollZoom: true,
                   doubleClick: false,
                   showTips: false,
                   displaylogo: false,
@@ -69857,10 +69857,21 @@
                   ]);
                 })
                 .then(function () {
-                  Plotly.animate("abce006e-5934-438b-963c-07f8554f28fe", null);
+                  // Jump to Mode 1 frame 0 statically — do not auto-play all frames
+                  Plotly.animate("abce006e-5934-438b-963c-07f8554f28fe", ["Mode 1_frame_0"], {
+                    frame: { duration: 0, redraw: true },
+                    transition: { duration: 0 },
+                    mode: "immediate",
+                  });
                 });
             }
           </script>
+        </div>
+        <!-- Custom play/pause control -->
+        <div class="text-center mt-2 mb-1">
+          <button id="playPauseBtn" onclick="togglePlayPause()" class="btn btn-primary px-4">
+            ⏸ Pause
+          </button>
         </div>
       </div>
 
@@ -69931,129 +69942,78 @@
     </script>
 
     <script>
-      // Animation state variables
+      // Animation state
       let currentPC = "Mode 1";
       let isPlaying = false;
       let animationInterval = null;
-      let isDragging = false;
-      let dragStartTime = 0;
-      let mouseStartPos = { x: 0, y: 0 };
-      let currentFrameIndex = 0; // Track current frame for pause-resume
-      let currentFrameNames = []; // Store current PC frame names
-      let frameCount = parseInt("20") || 20;
+      let currentFrameIndex = 0;
+      let currentFrameNames = [];
+      const frameCount = parseInt("20") || 20;
 
-      // Wait for the plot to be ready
       document.addEventListener("DOMContentLoaded", function () {
         const plotDiv = document.getElementsByClassName("plotly-graph-div")[0];
+        if (!plotDiv) return;
 
-        if (plotDiv) {
-          // Override the default button behavior
-          plotDiv.on("plotly_buttonclicked", function (eventData) {
-            const buttonLabel = eventData.button.label;
+        // Mode buttons: switch mode and restart animation
+        // Play/Pause buttons: explicit control
+        plotDiv.on("plotly_buttonclicked", function (eventData) {
+          const label = eventData.button.label;
+          if (label.startsWith("Mode ")) {
+            startPCLoop(label, true);
+          } else if (label.includes("Play")) {
+            startPCLoop(currentPC, false);
+          } else if (label.includes("Pause")) {
+            stopAnimation();
+          }
+        });
 
-            // Check if it's a Mode button
-            if (buttonLabel.startsWith("Mode ")) {
-              currentPC = buttonLabel;
-              startPCLoop(buttonLabel, true); // true = reset to beginning
-            }
-            // Check if it's play/pause buttons
-            else if (buttonLabel.includes("Play")) {
-              if (currentPC) {
-                startPCLoop(currentPC, false); // false = resume from current position
-              }
-            } else if (buttonLabel.includes("Pause")) {
-              stopAnimation();
-            }
-          });
+        // Pause on mousedown so rotation works immediately — dblclick resumes
+        plotDiv.addEventListener("mousedown", function () {
+          if (isPlaying) stopAnimation();
+        });
 
-          // Simplified click handling - toggle play/pause on background clicks
-          plotDiv.on("plotly_click", function (eventData) {
-            // Only handle clicks if no trace was clicked (background clicks)
-            if (!eventData.points || eventData.points.length === 0) {
-              if (!isDragging) {
-                togglePlayPause();
-              }
-            }
-          });
+        // Double-click anywhere on the plot to toggle play/pause
+        plotDiv.addEventListener("dblclick", function (event) {
+          event.stopPropagation();
+          togglePlayPause();
+        });
 
-          // Detect when user starts interacting with the 3D scene (drag to pause)
-          plotDiv.on("plotly_relayout", function (eventData) {
-            // Check if this is a camera/scene update (user rotating/zooming)
-            if (
-              eventData &&
-              (eventData["scene.camera"] || eventData["scene.camera.eye"] || eventData["scene.camera.center"] || eventData["scene.camera.up"])
-            ) {
-              // If user drags while playing, pause it
-              if (isPlaying) {
-                stopAnimation();
-              }
-            }
-          });
-
-          // Simplified drag detection
-          plotDiv.addEventListener("mousedown", function (event) {
-            isDragging = false;
-            dragStartTime = Date.now();
-            mouseStartPos = { x: event.clientX, y: event.clientY };
-          });
-
-          plotDiv.addEventListener("mousemove", function (event) {
-            const timeSinceStart = Date.now() - dragStartTime;
-            const moveDistance = Math.sqrt(Math.pow(event.clientX - mouseStartPos.x, 2) + Math.pow(event.clientY - mouseStartPos.y, 2));
-
-            // Detect if this is a drag
-            if (timeSinceStart > 50 && moveDistance > 5) {
-              isDragging = true;
-            }
-          });
-
-          plotDiv.addEventListener("mouseup", function (event) {
-            // Reset drag state after a short delay
-            setTimeout(() => {
-              isDragging = false;
-            }, 100);
-          });
-
-          // Initialize with Mode 1 but don't auto-start animation
-          setTimeout(() => {
-            currentPC = "Mode 1";
-            updateButtonStyling();
-          }, 100);
-        }
+        // Auto-start Mode 1 and hide Plotly's built-in Play/Pause buttons
+        setTimeout(() => {
+          Plotly.relayout(plotDiv, { "updatemenus[1].visible": false });
+          startPCLoop("Mode 1", true);
+        }, 300);
       });
 
       function togglePlayPause() {
         if (isPlaying) {
           stopAnimation();
-        } else if (currentPC) {
-          startPCLoop(currentPC, false); // false = resume from current position
+        } else {
+          startPCLoop(currentPC, false);
         }
       }
 
       function startPCLoop(pcLabel, resetToBeginning) {
-        stopAnimation(); // Stop any existing animation
+        stopAnimation();
         isPlaying = true;
         currentPC = pcLabel;
         updateButtonStyling();
 
-        // Generate frame names for the selected PC
         const frameNames = [];
         for (let i = 0; i < frameCount; i++) {
           frameNames.push(`${pcLabel}_frame_${i}`);
         }
 
-        // Reset to beginning if requested or if PC changed
         if (resetToBeginning || !currentFrameNames.length || currentFrameNames[0] !== frameNames[0]) {
           currentFrameIndex = 0;
         }
         currentFrameNames = frameNames;
 
-        // Start the animation loop
         animationInterval = setInterval(() => {
           const plotDiv = document.getElementsByClassName("plotly-graph-div")[0];
           if (plotDiv && isPlaying) {
             Plotly.animate(plotDiv, [frameNames[currentFrameIndex]], {
-              frame: { duration: 100, redraw: true },
+              frame: { duration: 80, redraw: true },
               transition: { duration: 0 },
             });
             currentFrameIndex = (currentFrameIndex + 1) % frameNames.length;
@@ -70068,36 +70028,20 @@
           clearInterval(animationInterval);
           animationInterval = null;
         }
-        // Note: currentFrameIndex is preserved for resume functionality
       }
 
       function updateButtonStyling() {
-        // Apply CSS classes to show available action (not current state)
-        setTimeout(() => {
-          const buttons = document.querySelectorAll(".updatemenu-button");
-          if (buttons.length >= 2) {
-            // Get the play/pause buttons (should be the last 2 buttons)
-            const playPauseButtons = Array.from(buttons).slice(-2);
-            const playButton = playPauseButtons[0];
-            const pauseButton = playPauseButtons[1];
-
-            if (playButton && pauseButton) {
-              // Remove existing classes
-              playButton.classList.remove("button-active", "button-inactive");
-              pauseButton.classList.remove("button-active", "button-inactive");
-
-              if (isPlaying) {
-                // When playing, highlight pause button (available action)
-                playButton.classList.add("button-inactive");
-                pauseButton.classList.add("button-active");
-              } else {
-                // When paused, highlight play button (available action)
-                playButton.classList.add("button-active");
-                pauseButton.classList.add("button-inactive");
-              }
-            }
-          }
-        }, 50);
+        const btn = document.getElementById("playPauseBtn");
+        if (!btn) return;
+        if (isPlaying) {
+          btn.textContent = "⏸ Pause";
+          btn.classList.remove("btn-outline-primary");
+          btn.classList.add("btn-primary");
+        } else {
+          btn.textContent = "▶ Play";
+          btn.classList.remove("btn-primary");
+          btn.classList.add("btn-outline-primary");
+        }
       }
     </script>
   </body>
