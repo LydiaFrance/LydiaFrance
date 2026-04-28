@@ -1,6 +1,7 @@
 repo_description_lines_max: 2
 
 github_repos:
+  - LydiaFrance/BirdDMD
   - LydiaFrance/morphing_birds
   - LydiaFrance/spiderpca
   - alan-turing-institute/trustchain

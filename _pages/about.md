@@ -27,7 +27,9 @@ I am a [Schmidt AI in Science](https://www.schmidtsciences.org/) Research Fellow
 
 I'm interested in how we can use statistics and maths to more intuitively interpret complexity in natural movement.
 
-My background is in Zoology, and I work across many disciplines including machine learning, dynamical physical systems, data science, software engineering, climate modelling, statistical geometry, sensory biology, aerodynamics, and robotics. [Here you can find out more about what I'm working on](/_projects/).
+My latest preprint, [An Interpretable Data-Driven Model of the Flight Dynamics of Hawks](https://arxiv.org/abs/2602.19196), uses dynamic mode decomposition to model hawk flight from motion-capture data. The accompanying code is available in the [BirdDMD GitHub repository](https://github.com/LydiaFrance/BirdDMD) and [documentation](https://lydiafrance.github.io/BirdDMD/).
+
+My background is in Zoology, and I work across many disciplines including machine learning, dynamical physical systems, data science, software engineering, climate modelling, statistical geometry, sensory biology, aerodynamics, and robotics. [Here you can find out more about what I'm working on](/projects/).
 
 I also work as a [Research Software Engineer](https://www.turing.ac.uk/work-turing/research/research-engineering-group) at the Alan Turing Institute where I develop open, reproducible code applying AI to global challenges. At the moment I work on [AI to predict Arctic sea ice loss](https://www.turing.ac.uk/research/research-projects/understanding-arctic-sea-ice-loss).
 
