@@ -69,6 +69,11 @@ ninja.data = [{
           description: "See how reducing dimensions affects our understanding of bird flight patterns",
           section: "Projects",handler: () => {
               window.location.href = "/LydiaFrance/projects/morphing-wings/page5/";
+            },},{id: "projects-testing-the-modes-on-other-birds",
+          title: 'Testing the Modes on Other Birds',
+          description: "A proof of concept for comparing bird movement across species with different wing and tail shapes.",
+          section: "Projects",handler: () => {
+              window.location.href = "/LydiaFrance/projects/morphing-wings/page6/";
             },},{id: "projects-project-2",
           title: 'project 2',
           description: "a project with a background image and giscus comments",
