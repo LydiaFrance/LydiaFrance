@@ -99,8 +99,8 @@ By splitting the complexity of morphing flight into morphing shape modes it is f
 The shape changes are combined together and don't exist in isolation. Also it's important to remember every hawk flies differently!
 
 - **Context-Dependent Control**: Different shape changes when accelerating, turning, gliding, and landing
-- **Coordinated Patterns**: Multiple modes work together to achieve complex manoeuvers
-- **Efficient Design**: Only a few fundamental patterns can generate the full range of bird flight behaviors
+- **Coordinated Patterns**: Multiple modes work together to achieve complex manoeuvres
+- **Efficient Design**: Only a few fundamental patterns can generate the full range of bird flight behaviours
 
 **Go to the next page to see how we can use the modes to simplify morphing flight.**
 

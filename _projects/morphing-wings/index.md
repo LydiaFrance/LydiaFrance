@@ -27,11 +27,11 @@ In this slowed down video, the hawk uses many adjustments to her wings and tail 
 
 ## Adaptive, Reactive
 
-Morphing flight gives birds extraordinary control. By adjusting their **shape** as they fly, birds precisely change their stability, lift, and drag continously. Birds have evolved to to fly through dense forest branches, execute sharp turns that no fighter jet can manage, and land on a perch no wider than your thumb. Meanwhile, our aircraft need long runways, can't handle sudden wind gusts, and can't stop in midair.
+Morphing flight gives birds extraordinary control. By adjusting their **shape** as they fly, birds precisely change their stability, lift, and drag continuously. Birds have evolved to fly through dense forest branches, execute sharp turns that no fighter jet can manage, and land on a perch no wider than your thumb. Meanwhile, our aircraft need long runways, can't handle sudden wind gusts, and can't stop in midair.
 
 ## Mystery of Shape-Shifting Flight
 
-We still don't understand how morphing flight is controlled. We would like to learn from birds: how they control such super-manoeuvribility. Which **shape changes** are critical in flight? How do birds control so many coordinated movements all at once? It is no easy task, even recording wings in flight accurately is difficult as bird flight is high speed.
+We still don't understand how morphing flight is controlled. We would like to learn from birds: how they control such super-manoeuvrability. Which **shape changes** are critical in flight? How do birds control so many coordinated movements all at once? It is no easy task, even recording wings in flight accurately is difficult as bird flight is high speed.
 
 <div class="row mt-4">
     <div class="col-md-6">
@@ -39,7 +39,7 @@ We still don't understand how morphing flight is controlled. We would like to le
         <ul>
             <li>Fixed wing shapes</li>
             <li>Simple control surfaces</li>
-            <li>Limited maneuverability</li>
+            <li>Limited manoeuvrability</li>
             <li>Struggle with turbulence</li>
         </ul>
     </div>
@@ -48,7 +48,7 @@ We still don't understand how morphing flight is controlled. We would like to le
         <ul>
             <li>Continuously changing wing shapes</li>
             <li>Flexible control surfaces</li>
-            <li>Extraordinary maneuverability</li>
+            <li>Extraordinary manoeuvrability</li>
             <li>Thrive in complex wind conditions</li>
         </ul>
     </div>

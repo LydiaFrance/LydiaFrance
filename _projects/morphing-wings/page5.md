@@ -98,6 +98,8 @@ With fewer modes, the representation drifts away from the original. Even with 4 
 
 Morphing flight has very subtle elements and the hawks need more modes for manoeuvres.
 
+**Read on to see an early test of whether these hawk modes can be mapped onto other bird body shapes.**
+
 <!-- Progress Navigator -->
 <div class="progress-navigator-container mt-5">
     <div class="progress-navigator-bar">
@@ -121,6 +123,10 @@ Morphing flight has very subtle elements and the hawks need more modes for manoe
             <div class="step-number">5</div>
             <div class="step-title">Simplified Flight</div>
         </div>
+        <div class="step" data-page="page6">
+            <div class="step-number">6</div>
+            <div class="step-title">Other Species</div>
+        </div>
     </div>
 </div>
 
@@ -136,7 +142,7 @@ Morphing flight has very subtle elements and the hawks need more modes for manoe
     align-items: center;
     position: relative;
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 900px;
 }
 
 .progress-navigator-bar::before {
@@ -160,7 +166,7 @@ Morphing flight has very subtle elements and the hawks need more modes for manoe
     z-index: 2;
     position: relative;
     background: white;
-    padding: 0 10px;
+    padding: 0 8px;
 }
 
 .step-number {
@@ -179,11 +185,12 @@ Morphing flight has very subtle elements and the hawks need more modes for manoe
 }
 
 .step-title {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-align: center;
     color: #6c757d;
     font-weight: 500;
     transition: color 0.3s ease;
+    max-width: 92px;
 }
 
 .step.active .step-number {
