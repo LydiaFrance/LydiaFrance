@@ -74,25 +74,25 @@ The animations below start with the real Harris' hawk movement. The three exampl
     <div class="col-md-4 mb-3">
         <img src="{{ '/assets/img/morphing-wings/cross-species/black-swift-hawk-flight.gif' | relative_url }}"
              class="img-fluid rounded z-depth-1 species-gif"
-             alt="Projected hawk flight shape changes on a black swift body shape">
+             alt="Black swift with large handwing, 0.4 m wingspan">
         <div class="caption text-center">
-            Black swift, hawk movement mapped onto a roughly 45 cm wingspan.
+            Black swift with large handwing (0.4 m wingspan).
         </div>
     </div>
     <div class="col-md-4 mb-3">
         <img src="{{ '/assets/img/morphing-wings/cross-species/sharp-shinned-hawk-flight.gif' | relative_url }}"
              class="img-fluid rounded z-depth-1 species-gif"
-             alt="Projected hawk flight shape changes on a sharp-shinned hawk body shape">
+             alt="Sharp-shinned hawk with a longer narrow tail, 0.7 m wingspan">
         <div class="caption text-center">
-            Sharp-shinned hawk, hawk movement mapped onto a roughly 55 cm wingspan.
+            Sharp-shinned hawk has a longer narrow tail (0.7 m wingspan).
         </div>
     </div>
     <div class="col-md-4 mb-3">
         <img src="{{ '/assets/img/morphing-wings/cross-species/canada-goose-hawk-flight.gif' | relative_url }}"
              class="img-fluid rounded z-depth-1 species-gif"
-             alt="Projected hawk flight shape changes on a Canada goose body shape">
+             alt="Canada goose with large wingspan and short tail, 2 m wingspan">
         <div class="caption text-center">
-            Canada goose, hawk movement mapped onto a roughly 1.5 m wingspan.
+            Canada goose has large wingspan and short tail (2 m wingspan).
         </div>
     </div>
 </div>
@@ -101,7 +101,7 @@ The animations below start with the real Harris' hawk movement. The three exampl
 
 The transformed movements still look organised. The wings lift, spread, and sweep in recognisable ways even when the body shape is very different from a Harris' hawk.
 
-The species-specific differences still show through. The black swift has a high proportion of handwing, the sharp-shinned hawk keeps a hawk-like body plan with an especially long tail, and the Canada goose has a large wingspan with a comparatively narrow tail. The goose-shaped wing also shows stronger-looking twist, which may be because the larger arm wing, relative to the handwing, changes how the hawk movement pattern is expressed.
+The species-specific differences still show through. The black swift has a high proportion of handwing, the sharp-shinned hawk has a longer narrow tail, and the Canada goose has a large wingspan and short tail. The goose-shaped wing also shows stronger-looking twist, which may be because the larger arm wing, relative to the handwing, changes how the hawk movement pattern is expressed.
 
 That suggests the morphing modes could act as a shared coordinate system: a way to compare wing and tail shape changes across species without starting from scratch each time.
 
