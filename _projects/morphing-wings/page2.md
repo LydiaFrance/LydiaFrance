@@ -101,6 +101,10 @@ These are the first two, we have found **nine morphing shape modes** which combi
             <div class="step-number">5</div>
             <div class="step-title">Simplified Flight</div>
         </div>
+        <div class="step" data-page="page6">
+            <div class="step-number">6</div>
+            <div class="step-title">Other Species</div>
+        </div>
     </div>
 </div>
 
@@ -116,7 +120,7 @@ These are the first two, we have found **nine morphing shape modes** which combi
     align-items: center;
     position: relative;
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 900px;
 }
 
 .progress-navigator-bar::before {
@@ -140,7 +144,7 @@ These are the first two, we have found **nine morphing shape modes** which combi
     z-index: 2;
     position: relative;
     background: white;
-    padding: 0 10px;
+    padding: 0 8px;
 }
 
 .step-number {
@@ -159,11 +163,12 @@ These are the first two, we have found **nine morphing shape modes** which combi
 }
 
 .step-title {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-align: center;
     color: #6c757d;
     font-weight: 500;
     transition: color 0.3s ease;
+    max-width: 92px;
 }
 
 .step.active .step-number {
