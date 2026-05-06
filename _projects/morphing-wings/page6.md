@@ -124,7 +124,7 @@ This is useful because it keeps the comparison fair. We are not asking every bir
 
 ## Source
 
-This prototype is based on the cross-species generalisation notebook in the kinematic morphospace project, using specimen measurements from Harvey et al. (2022).
+This prototype is based on the cross-species generalisation notebook in the kinematic morphospace project, using specimen measurements from Harvey et al. (2022), Nature, DOI: [10.1038/s41586-022-04477-8](https://doi.org/10.1038/s41586-022-04477-8). The associated dataset is available at [10.6084/m9.figshare.c.5503989](https://doi.org/10.6084/m9.figshare.c.5503989).
 
 <!-- Progress Navigator -->
 <div class="progress-navigator-container mt-5">
