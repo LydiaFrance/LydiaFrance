@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page 3 — Design Concept</title>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --bg: #f2f2f4;
+        --card: #ffffff;
+        --text: #1d1d1f;
+        --text-soft: #6e6e73;
+        --text-faint: #b0b0b5;
+        --radius: 18px;
+        --shadow: 0 2px 24px rgba(0,0,0,0.07);
+      }
+
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        padding: 2rem 1.5rem 4rem;
+        line-height: 1.5;
+      }
+
+      .page { max-width: 960px; margin: 0 auto; }
+
+      /* ── Header ─────────────────────────────────────── */
+      .page-header { margin-bottom: 1.4rem; }
+
+      .page-header h1 {
+        font-size: clamp(1.4rem, 3vw, 1.9rem);
+        font-weight: 700;
+        letter-spacing: -0.025em;
+      }
+
+      .page-header p {
+        margin-top: 0.4rem;
+        color: var(--text-soft);
+        font-size: 0.95rem;
+        max-width: 60ch;
+      }
+
+      /* ── Main card (figure + side buttons) ──────────── */
+      .main-card {
+        background: var(--card);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 68px 1fr;
+      }
+
+      /* ── Mode rail (left column) ────────────────────── */
+      .mode-rail {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 14px 10px 14px 12px;
+        border-right: 1px solid #f0f0f2;
+        justify-content: center;
+      }
+
+      .mode-btn {
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 0.78rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f5f5f7;
+        color: var(--c);
+        transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s, color 0.15s;
+        flex-shrink: 0;
+      }
+
+      .mode-btn:hover {
+        transform: scale(1.08);
+        box-shadow: 0 3px 10px color-mix(in srgb, var(--c) 35%, transparent);
+      }
+
+      .mode-btn.active {
+        background: var(--c);
+        color: white;
+        border-color: var(--c);
+        box-shadow: 0 4px 14px color-mix(in srgb, var(--c) 45%, transparent);
+      }
+
+      .mode-btn.muted { opacity: 0.38; }
+      .mode-btn.muted:hover { opacity: 0.7; }
+      .mode-btn.muted.active { opacity: 1; }
+
+      /* ── Figure area (right column) ─────────────────── */
+      .figure-area {
+        position: relative;
+      }
+
+      /* Replace this with the Plotly div in the real page */
+      .figure-placeholder {
+        width: 100%;
+        height: 520px;
+        background: linear-gradient(160deg, #f7f7f9 0%, #ebebee 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        color: var(--text-faint);
+      }
+
+      .figure-placeholder .bird { font-size: 2.8rem; opacity: 0.3; }
+
+      .figure-placeholder .label {
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .figure-hint {
+        position: absolute;
+        bottom: 12px;
+        right: 14px;
+        font-size: 0.7rem;
+        color: var(--text-faint);
+        pointer-events: none;
+        letter-spacing: 0.01em;
+      }
+
+      /* ── Score scrubber card ─────────────────────────── */
+      .scrubber-card {
+        margin-top: 10px;
+        background: var(--card);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 1.1rem 1.4rem 1.2rem;
+        display: grid;
+        grid-template-columns: 52px 1fr 80px;
+        align-items: center;
+        gap: 1.1rem;
+      }
+
+      /* Play/pause */
+      .play-btn {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: none;
+        background: var(--text);
+        color: white;
+        font-size: 1.15rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+        transition: transform 0.1s, background 0.15s;
+        flex-shrink: 0;
+      }
+
+      .play-btn:hover { background: #3a3a3c; transform: scale(1.06); }
+      .play-btn:active { transform: scale(0.95); }
+
+      /* Scrubber */
+      .scrubber-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .scrubber-labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.72rem;
+        color: var(--text-faint);
+        padding: 0 2px;
+        position: relative;
+      }
+
+      .scrubber-labels .center-label {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* Custom track container */
+      .scrubber-track-wrap {
+        position: relative;
+        height: 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .scrubber-track-bg {
+        position: absolute;
+        left: 0; right: 0;
+        height: 5px;
+        background: #e5e5ea;
+        border-radius: 3px;
+        overflow: visible;
+      }
+
+      /* Centre mark */
+      .scrubber-track-bg::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 2px;
+        height: 11px;
+        background: #c8c8cc;
+        border-radius: 1px;
+      }
+
+      /* Bidirectional fill */
+      .scrubber-fill {
+        position: absolute;
+        height: 5px;
+        border-radius: 3px;
+        background: var(--active-c, #888);
+        transition: background 0.3s;
+        pointer-events: none;
+      }
+
+      /* Range input sits on top, transparent track */
+      input.scrubber {
+        position: absolute;
+        left: 0; right: 0;
+        width: 100%;
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        height: 20px;
+        cursor: pointer;
+        margin: 0;
+      }
+
+      input.scrubber::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: white;
+        border: 2.5px solid var(--active-c, #888);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        cursor: grab;
+        transition: border-color 0.2s, transform 0.1s;
+      }
+
+      input.scrubber:active::-webkit-slider-thumb {
+        cursor: grabbing;
+        transform: scale(1.15);
+      }
+
+      input.scrubber::-webkit-slider-runnable-track {
+        background: transparent;
+      }
+
+      /* Score readout */
+      .score-readout {
+        text-align: right;
+      }
+
+      .score-value {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--active-c, #888);
+        font-variant-numeric: tabular-nums;
+        transition: color 0.3s;
+        line-height: 1;
+      }
+
+      .score-unit {
+        font-size: 0.68rem;
+        color: var(--text-faint);
+        margin-top: 2px;
+      }
+
+      /* ── Page nav ────────────────────────────────────── */
+      .progress-nav {
+        display: flex;
+        justify-content: center;
+        gap: 0;
+        margin-top: 2rem;
+        position: relative;
+      }
+
+      .progress-nav::before {
+        content: '';
+        position: absolute;
+        top: 18px;
+        left: 10%;
+        right: 10%;
+        height: 1px;
+        background: #ddd;
+        z-index: 0;
+      }
+
+      .nav-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        flex: 1;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        padding: 0 6px;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .nav-dot {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: white;
+        border: 2px solid #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #aaa;
+        transition: all 0.15s;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      }
+
+      .nav-step.active .nav-dot {
+        background: #6f42c1;
+        border-color: #6f42c1;
+        color: white;
+        box-shadow: 0 3px 10px rgba(111,66,193,0.3);
+      }
+
+      .nav-step:hover:not(.active) .nav-dot {
+        border-color: #6f42c1;
+        color: #6f42c1;
+      }
+
+      .nav-label {
+        font-size: 0.68rem;
+        color: #aaa;
+        text-align: center;
+        font-weight: 500;
+        line-height: 1.3;
+      }
+
+      .nav-step.active .nav-label { color: #6f42c1; font-weight: 600; }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+
+      <div class="page-header">
+        <h1>Morphing Shape Modes</h1>
+        <p>Each mode describes one independent pattern of shape change seen during flight. Use the slider to explore positive and negative scores, or press play to watch the full range.</p>
+      </div>
+
+      <!-- Figure + side mode buttons -->
+      <div class="main-card">
+
+        <!-- Mode buttons (left) -->
+        <div class="mode-rail" id="modeRail"></div>
+
+        <!-- Figure (right) -->
+        <div class="figure-area">
+          <div class="figure-placeholder">
+            <div class="bird">🦅</div>
+            <div class="label">3D Plotly figure</div>
+          </div>
+          <div class="figure-hint">Drag to rotate &nbsp;·&nbsp; Scroll to zoom</div>
+        </div>
+
+      </div>
+
+      <!-- Score scrubber -->
+      <div class="scrubber-card">
+
+        <button class="play-btn" id="playBtn">⏸</button>
+
+        <div class="scrubber-wrap">
+          <div class="scrubber-labels">
+            <span>−2σ</span>
+            <span class="center-label">0</span>
+            <span>+2σ</span>
+          </div>
+          <div class="scrubber-track-wrap">
+            <div class="scrubber-track-bg">
+              <div class="scrubber-fill" id="scrubFill"></div>
+            </div>
+            <input class="scrubber" id="scrubber" type="range" min="-1" max="1" step="0.001" value="0" />
+          </div>
+        </div>
+
+        <div class="score-readout">
+          <div class="score-value" id="scoreValue">0.00</div>
+          <div class="score-unit">std dev</div>
+        </div>
+
+      </div>
+
+      <!-- Page nav -->
+      <nav class="progress-nav">
+        <a class="nav-step" href="#"><div class="nav-dot">1</div><span class="nav-label">Morphing<br>Flight</span></a>
+        <a class="nav-step" href="#"><div class="nav-dot">2</div><span class="nav-label">Hidden<br>Patterns</span></a>
+        <a class="nav-step active" href="#"><div class="nav-dot">3</div><span class="nav-label">Shape<br>Modes</span></a>
+        <a class="nav-step" href="#"><div class="nav-dot">4</div><span class="nav-label">Obstacle<br>Avoidance</span></a>
+        <a class="nav-step" href="#"><div class="nav-dot">5</div><span class="nav-label">Simplified<br>Flight</span></a>
+      </nav>
+
+    </div>
+
+    <script>
+      const COLOURS = [
+        '#B5E675','#6ED8A9','#51B3D4',
+        '#4579AA','#F19EBA','#BC96C9',
+        '#917AC2','#BE607F','#624E8B',
+        '#888888','#888888','#888888',
+      ];
+
+      let activeMode = 0;
+      let isPlaying = true;
+      let scrubValue = 0;  // -1 to +1
+      let userScrubbing = false;
+
+      // ── Mode buttons ──────────────────────────────────────
+      const rail = document.getElementById('modeRail');
+      COLOURS.forEach((c, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'mode-btn' + (i >= 9 ? ' muted' : '') + (i === 0 ? ' active' : '');
+        btn.style.setProperty('--c', c);
+        btn.style.color = i === 0 ? 'white' : c;
+        btn.textContent = i + 1;
+        btn.title = `Mode ${i + 1}`;
+        btn.addEventListener('click', () => setMode(i));
+        rail.appendChild(btn);
+      });
+
+      function setMode(i) {
+        const pills = document.querySelectorAll('.mode-btn');
+        pills[activeMode].classList.remove('active');
+        pills[activeMode].style.color = COLOURS[activeMode];
+        activeMode = i;
+        pills[i].classList.add('active');
+        pills[i].style.color = 'white';
+        // Update accent colour everywhere
+        document.getElementById('scrubFill').style.background = COLOURS[i];
+        document.getElementById('scrubber').style.setProperty('--active-c', COLOURS[i]);
+        document.getElementById('scoreValue').style.color = COLOURS[i];
+        document.documentElement.style.setProperty('--active-c', COLOURS[i]);
+        if (!isPlaying) setIsPlaying(true);
+      }
+
+      // ── Play / pause ──────────────────────────────────────
+      function setIsPlaying(val) {
+        isPlaying = val;
+        document.getElementById('playBtn').textContent = isPlaying ? '⏸' : '▶';
+      }
+
+      document.getElementById('playBtn').addEventListener('click', () => {
+        setIsPlaying(!isPlaying);
+      });
+
+      // ── Scrubber interaction ──────────────────────────────
+      const scrubberEl = document.getElementById('scrubber');
+
+      scrubberEl.addEventListener('mousedown', () => {
+        userScrubbing = true;
+        setIsPlaying(false);
+      });
+
+      scrubberEl.addEventListener('touchstart', () => {
+        userScrubbing = true;
+        setIsPlaying(false);
+      });
+
+      window.addEventListener('mouseup', () => { userScrubbing = false; });
+      window.addEventListener('touchend', () => { userScrubbing = false; });
+
+      scrubberEl.addEventListener('input', () => {
+        scrubValue = parseFloat(scrubberEl.value);
+        updateScrubUI();
+      });
+
+      function updateScrubUI() {
+        // Bidirectional fill from centre
+        const pct = (scrubValue + 1) / 2 * 100; // 0–100%
+        const fill = document.getElementById('scrubFill');
+        if (scrubValue >= 0) {
+          fill.style.left  = '50%';
+          fill.style.width = (pct - 50) + '%';
+        } else {
+          fill.style.left  = pct + '%';
+          fill.style.width = (50 - pct) + '%';
+        }
+        // Score readout: show in std dev units (±2 range)
+        const stddev = (scrubValue * 2).toFixed(2);
+        const sign = scrubValue >= 0 ? '+' : '';
+        document.getElementById('scoreValue').textContent = sign + stddev;
+      }
+
+      // ── Animation loop (triangle wave) ───────────────────
+      let direction = 1;
+      const SPEED = 0.008; // per tick
+
+      setInterval(() => {
+        if (!isPlaying || userScrubbing) return;
+        scrubValue += SPEED * direction;
+        if (scrubValue >= 1)  { scrubValue = 1;  direction = -1; }
+        if (scrubValue <= -1) { scrubValue = -1; direction =  1; }
+        scrubberEl.value = scrubValue;
+        updateScrubUI();
+      }, 40);
+
+      // ── Initialise ────────────────────────────────────────
+      document.documentElement.style.setProperty('--active-c', COLOURS[0]);
+      document.getElementById('scrubFill').style.background = COLOURS[0];
+      document.getElementById('scrubber').style.setProperty('--active-c', COLOURS[0]);
+      document.getElementById('scoreValue').style.color = COLOURS[0];
+      updateScrubUI();
+    </script>
+  </body>
+</html>
